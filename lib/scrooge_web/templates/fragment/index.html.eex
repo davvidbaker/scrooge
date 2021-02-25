@@ -1,0 +1,28 @@
+<h1>Listing Fragments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Slug</th>
+      <th>Doc</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for fragment <- @fragments do %>
+    <tr>
+      <td><%= fragment.slug %></td>
+      <td><%= fragment.doc %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.fragment_path(@conn, :show, fragment) %></span>
+        <span><%= link "Edit", to: Routes.fragment_path(@conn, :edit, fragment) %></span>
+        <span><%= link "Delete", to: Routes.fragment_path(@conn, :delete, fragment), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Fragment", to: Routes.fragment_path(@conn, :new) %></span>

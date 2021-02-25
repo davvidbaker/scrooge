@@ -1,0 +1,18 @@
+<h1>Show Fragment</h1>
+
+<ul>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @fragment.slug %>
+  </li>
+
+  <li>
+    <strong>Doc:</strong>
+    <%= @fragment.doc %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.fragment_path(@conn, :edit, @fragment) %></span>
+<span><%= link "Back", to: Routes.fragment_path(@conn, :index) %></span>

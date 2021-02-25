@@ -1,0 +1,5 @@
+<h1>Edit Fragment</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.fragment_path(@conn, :update, @fragment)) %>
+
+<span><%= link "Back", to: Routes.fragment_path(@conn, :index) %></span>
